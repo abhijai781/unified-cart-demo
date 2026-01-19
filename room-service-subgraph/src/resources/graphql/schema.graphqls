@@ -1,0 +1,89 @@
+type Query {
+    roomServiceCart(accountId: ID!, shipCode: String!, sailDate: String!, itemCount: Int!, subTotalMinor: Int!): RoomServiceCart
+    unifiedCartSummary(accountId: ID!): UnifiedCartSummary
+}
+
+type Sailing @key(fields: "shipCode sailDate") @extends{
+  shipCode: String @external
+  sailDate: String @external
+  status: SailingStatus!
+  isOnBoard: Boolean!
+  roomServiceCart(accountId: ID!): RoomServiceCart @requires(fields: "shipCode sailDate")
+}
+
+enum SailingStatus {
+  UPCOMING
+  ACTIVE
+  CANCELLED
+  COMPLETED
+}
+
+type RoomServiceCart @key(fields: "cartId") {
+  cartId: ID!
+  accountId: ID!
+  shipCode: String
+  sailDate: String
+  stateRoom: String
+  cartType: UnifiedCartType! # ROOM_SERVICE
+  itemCount: Int!
+  menuId: ID
+  items: [RoomServiceCartItem!]!
+  subTotalMinor: Int!
+  currencyCode: String!
+  isPreOrder: Boolean!
+  scheduleDelivery: String
+  availability: CartAvailability!
+  #TODO for view cart: Cart!
+}
+
+interface UnifiedCart {
+  cartId: ID!
+  cartType: UnifiedCartType!
+  itemCount: Int!
+  subTotalMinor: Int!
+  currencyCode: String!
+  availability: CartAvailability!
+}
+
+type RoomServiceCartItem {
+  id: ID!
+  name: String!
+  quantity: Int!
+  unitPriceMinor: Int!
+  totalPriceMinor: Int!
+  imageUrl: String
+  specialInstructions: String
+}
+
+enum UnifiedCartType {
+  ROOM_SERVICE
+  COMMERCE
+  PHOTO
+  MARKETPLACE
+}
+
+type CartAvailability {
+  available: Boolean!
+  reason: String
+  #"Ship only", "Shore only" etc.
+}
+
+type UnifiedCartSummary {
+  totalItemCount: Int!
+  totalValueMinor: Int!
+  currencyCode: String!
+  sailings: [SailingCartSummary!]!
+}
+
+type SailingCartSummary {
+  shipCode: String!
+  sailDate: String!
+  carts: [CartSummary!]!
+}
+
+type CartSummary {
+  cartType: UnifiedCartType!
+  itemCount: Int!
+  subtotalMinor: Int!
+  availability: CartAvailability!
+}

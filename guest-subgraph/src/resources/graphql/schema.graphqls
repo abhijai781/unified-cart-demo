@@ -1,0 +1,25 @@
+type Query {
+    guest(accountId: ID!): Guest
+    sailings(accountId: String, status: [SailingStatus], first: Int): [Sailing]
+}
+
+type Guest @key(fields: "accountId") {
+  accountId: ID!
+  name: String
+  email: String
+  sailings(status: [SailingStatus],  first: Int): [Sailing]
+}
+
+type Sailing @key(fields: "shipCode sailDate") {
+  shipCode: String!
+  sailDate: String!
+  status: SailingStatus!
+  isOnBoard: Boolean!
+}
+
+enum SailingStatus {
+  UPCOMING
+  ACTIVE
+  CANCELLED
+  COMPLETED
+}

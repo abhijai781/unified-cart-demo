@@ -1,0 +1,12 @@
+# This configuration expects subgraphs to be running on the
+# same machine as the router. For Docker, use graph.yaml instead.
+version: 1
+subgraphs:
+  - name: guest
+    routing_url: http://localhost:8081/graphql
+    introspection:
+      url: http://localhost:8081/graphql
+  - name: room
+    routing_url: http://localhost:8082/graphql
+    schema:
+      file: ../room-service-subgraph/src/resources/graphql/schema.graphqls
