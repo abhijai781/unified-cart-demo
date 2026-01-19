@@ -1,0 +1,7 @@
+server:
+  port: 8083
+spring:
+  graphql:
+    path: /graphql
+    media-types: application/json
+

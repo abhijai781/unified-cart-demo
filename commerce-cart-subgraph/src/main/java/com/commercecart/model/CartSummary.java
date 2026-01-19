@@ -1,0 +1,15 @@
+package com.commercecart.model;
+
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class CartSummary {
+    private UnifiedCartType cartType;
+    private Integer itemCount;
+    private Integer subtotalMinor;
+    private CartAvailability availability;
+}

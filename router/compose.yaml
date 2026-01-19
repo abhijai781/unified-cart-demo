@@ -10,3 +10,7 @@ subgraphs:
     routing_url: http://localhost:8082/graphql
     schema:
       file: ../room-service-subgraph/src/resources/graphql/schema.graphqls
+  - name: commercecart
+    routing_url: http://localhost:8083/graphql
+    introspection:
+      url: http://localhost:8083/graphql
