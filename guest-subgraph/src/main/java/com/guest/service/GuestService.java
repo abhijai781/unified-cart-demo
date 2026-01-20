@@ -2,7 +2,7 @@ package com.guest.service;
 
 import com.guest.model.Guest;
 import com.guest.model.Sailing;
-import com.guest.model.SailingStatus;
+import com.common.model.SailingStatus;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

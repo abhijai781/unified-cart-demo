@@ -1,5 +1,7 @@
 package com.commercecart.model;
 
+import com.common.model.CartAvailability;
+import com.common.model.UnifiedCartType;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;

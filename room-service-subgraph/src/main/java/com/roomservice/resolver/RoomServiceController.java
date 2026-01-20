@@ -1,6 +1,9 @@
 package com.roomservice.resolver;
 
-import com.roomservice.model.*;
+import com.roomservice.model.RoomServiceCart;
+import com.roomservice.model.Sailing;
+import com.common.model.SailingStatus;
+import com.common.model.UnifiedCartSummary;
 import com.roomservice.service.RoomServiceService;
 import org.springframework.graphql.data.federation.EntityMapping;
 import org.springframework.graphql.data.method.annotation.Argument;

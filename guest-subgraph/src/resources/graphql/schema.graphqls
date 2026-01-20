@@ -23,3 +23,36 @@ enum SailingStatus {
   CANCELLED
   COMPLETED
 }
+
+enum UnifiedCartType {
+  ROOM_SERVICE
+  COMMERCE
+  PHOTO
+  MARKETPLACE
+}
+
+type CartAvailability {
+  available: Boolean!
+  reason: String
+  #"Ship only", "Shore only" etc.
+}
+
+type CartSummary {
+  cartType: UnifiedCartType!
+  itemCount: Int!
+  subtotalMinor: Int!
+  availability: CartAvailability!
+}
+
+type SailingCartSummary {
+  shipCode: String!
+  sailDate: String!
+  carts: [CartSummary!]!
+}
+
+type UnifiedCartSummary {
+  totalItemCount: Int!
+  totalValueMinor: Int!
+  currencyCode: String!
+  sailings: [SailingCartSummary!]!
+}

@@ -1,7 +1,5 @@
-package com.roomservice.model;
+package com.common.model;
 
-import com.common.model.CartAvailability;
-import com.common.model.UnifiedCartType;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
@@ -11,7 +9,7 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class RoomServiceCart {
+public class Cart {
     private String cartId;
     private String accountId;
     private String shipCode;
@@ -20,7 +18,7 @@ public class RoomServiceCart {
     private UnifiedCartType cartType;
     private Integer itemCount;
     private String menuId;
-    private List<RoomServiceCartItem> items;
+    private List<CartItem> items;
     private Integer subTotalMinor;
     private String currencyCode;
     private Boolean isPreOrder;

@@ -1,4 +1,4 @@
-package com.commercecart.model;
+package com.common.model;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

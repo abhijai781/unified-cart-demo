@@ -1,6 +1,14 @@
 package com.commercecart.service;
 
-import com.commercecart.model.*;
+import com.commercecart.model.CommerceCart;
+import com.commercecart.model.CommerceCartItem;
+import com.commercecart.model.Sailing;
+import com.common.model.SailingStatus;
+import com.common.model.UnifiedCartSummary;
+import com.common.model.CartAvailability;
+import com.common.model.CartSummary;
+import com.common.model.SailingCartSummary;
+import com.common.model.UnifiedCartType;
 import org.springframework.stereotype.Service;
 
 import java.time.Instant;

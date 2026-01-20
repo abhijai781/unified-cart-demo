@@ -1,6 +1,14 @@
 package com.roomservice.service;
 
-import com.roomservice.model.*;
+import com.roomservice.model.RoomServiceCart;
+import com.roomservice.model.RoomServiceCartItem;
+import com.roomservice.model.Sailing;
+import com.common.model.SailingStatus;
+import com.common.model.UnifiedCartSummary;
+import com.common.model.CartAvailability;
+import com.common.model.CartSummary;
+import com.common.model.SailingCartSummary;
+import com.common.model.UnifiedCartType;
 import org.springframework.stereotype.Service;
 
 import java.time.Instant;

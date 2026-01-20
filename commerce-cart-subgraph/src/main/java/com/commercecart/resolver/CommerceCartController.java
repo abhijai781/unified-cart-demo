@@ -2,8 +2,8 @@ package com.commercecart.resolver;
 
 import com.commercecart.model.CommerceCart;
 import com.commercecart.model.Sailing;
-import com.commercecart.model.SailingStatus;
-import com.commercecart.model.UnifiedCartSummary;
+import com.common.model.SailingStatus;
+import com.common.model.UnifiedCartSummary;
 import com.commercecart.service.CommerceCartService;
 import org.springframework.graphql.data.federation.EntityMapping;
 import org.springframework.graphql.data.method.annotation.Argument;

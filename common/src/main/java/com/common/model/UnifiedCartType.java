@@ -1,4 +1,4 @@
-package com.roomservice.model;
+package com.common.model;
 
 public enum UnifiedCartType {
     ROOM_SERVICE,

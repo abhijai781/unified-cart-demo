@@ -3,7 +3,7 @@ package com.guest.resolver;
 
 import com.guest.model.Guest;
 import com.guest.model.Sailing;
-import com.guest.model.SailingStatus;
+import com.common.model.SailingStatus;
 import com.guest.service.GuestService;
 import org.springframework.graphql.data.federation.EntityMapping;
 import org.springframework.graphql.data.method.annotation.Argument;

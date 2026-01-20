@@ -1,5 +1,6 @@
 package com.roomservice.model;
 
+import com.common.model.SailingStatus;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;

@@ -1,4 +1,4 @@
-package com.guest.model;
+package com.common.model;
 
 public enum SailingStatus {
     UPCOMING,
